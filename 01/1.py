@@ -1,11 +1,10 @@
-# Using readlines()
-file1 = open("./01/1.txt", "r")
-lines = file1.readlines()
+with open("./01/1.txt", "r") as data:
+    values = [int(line) for line in data.readlines()]
+ 
+    count = 0
 
-count = 0
+    for i, j in enumerate(values[:-1]):
+        if int(values[i+1]) > int(j): 
+            count += 1
 
-for i, j in enumerate(lines[:-1]):
-    if int(lines[i+1]) > int(j): 
-        count += 1
-
-print(count)
+    print(count)

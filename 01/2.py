@@ -1,13 +1,12 @@
-# Using readlines()
-file1 = open("./01/2.txt", "r")
-lines = file1.readlines()
+with open("./01/1.txt", "r") as data:
+    values = [int(line) for line in data.readlines()]
 
-count = 0
+    count = 0
 
-for i, j in enumerate(lines[:-3]):
-    sum1 = int(lines[i+2]) + int(lines[i+1]) + int(j)
-    sum2 = int(lines[i+3]) + int(lines[i+2]) + int(lines[i+1])
-    if sum2 > sum1: 
-        count += 1
+    for i, j in enumerate(values[:-3]):
+        sum1 = values[i+2] + values[i+1] + j
+        sum2 = values[i+3] + values[i+2] + values[i+1]
+        if sum2 > sum1: 
+            count += 1
 
-print(count)
+    print(count)
